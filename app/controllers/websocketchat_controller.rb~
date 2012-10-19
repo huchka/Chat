@@ -1,0 +1,8 @@
+
+require_relative "WebSocketChat"
+
+class WebsocketchatController < ApplicationController
+  def index
+
+  end
+end

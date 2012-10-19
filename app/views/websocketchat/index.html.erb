@@ -1,0 +1,17 @@
+<h1>Websocket Chat </h1>
+
+<div>
+   ログイン名：
+   <INPUT TYPE="text"   id="loginName"  size="20" value="">
+   <INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
+</div>
+<div id="loginState"><p></p></div>
+  <div>
+    送信メッセージ:
+    <INPUT TYPE="text"   id="message"  size="20" value="">
+    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
+  </div>
+  <div>
+    受信データ
+    <div id="reciveDataSpace"></div>
+ </div>

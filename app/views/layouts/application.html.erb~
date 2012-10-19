@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat</title>
+  <script src='js/swfobject.js'></script>
+  <script src='js/FABridge.js'></script>
+  <script src='js/web_socket.js'></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "swfobject.js" %>
+  <%= javascript_include_tag "FABridge.js" %>
+  <%= javascript_include_tag "web_socket.js" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body onload="init();">
+
+<%= yield %>
+
+</body>
+</html>
