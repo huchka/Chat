@@ -2,13 +2,14 @@
 
 <div>
    ログイン名：
-   <INPUT TYPE="text"   id="loginName"  size="20" value="">
+   <INPUT TYPE="text"   id="loginName"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonLogin').click();" size="20" value="">
    <INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
+   <INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
 </div>
 <div id="loginState"><p></p></div>
   <div>
     送信メッセージ:
-    <INPUT TYPE="text"   id="message"  size="20" value="">
+    <INPUT TYPE="text"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();" size="20" value="">
     <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
   </div>
   <div>

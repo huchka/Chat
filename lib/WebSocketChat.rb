@@ -7,6 +7,7 @@ require 'em-websocket'
 module ChatModule
   # ログイン要求コマンド
   CMD_LOGIN = "[CreateLoginUserCmd]"
+  CMD_LOGOUT = "[LogoutUserCmd]"
   CMD_RETURN_LOGIN_OK = "[CreateLoginUserCmd_OK]"
   CMD_RETURN_LOGIN_NG = "[CreateLoginUserCmd_NG]"
   
@@ -20,6 +21,12 @@ module ChatModule
   end
 
   # 接続ユーザー全員にメッセージを送る
+  def logoutMessage?(msg)
+    puts "in logoutMessage function #{msg}"
+    msg.include?(CMD_LOGOUT)
+  end
+
+  # 接続ユーザー全員にメッセージを送る
   def sendBroadcast(msg)
     return if msg.empty?
     @@connected_clients.each_value { |c| c.send(msg) }
@@ -29,7 +36,7 @@ module ChatModule
   # ログイン処理
   def login(msg)
     msgArray = msg.strip.split(":")
-    name = msgArray[1][0...(msgArray[1].size-1)]
+    name = msgArray[1][0...(msgArray[1].size)]
     if @@connected_clients.has_key?(name) == false
       @loginName = name
       @@connected_clients[@loginName] = self
@@ -64,6 +71,8 @@ EM::WebSocket.start(:host => "0.0.0.0", :port => 8080) { |ws|
     
     if ws.loginMessage?(msg)
       ws.login(msg)
+    elsif ws.logoutMessage?(msg)
+      ws.logout
     else
       ws.sendBroadcast(msg)
     end
