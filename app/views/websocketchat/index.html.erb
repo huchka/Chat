@@ -1,18 +1,42 @@
-<h1>Websocket Chat </h1>
+<div id="pagebody">
 
-<div>
-   ログイン名：
-   <INPUT TYPE="text"   id="loginName"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonLogin').click();" size="20" value="">
-   <INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
-   <INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
+	<div id="header"><h1>Websocket Chat</h1></div>
+
+	<!--（中央） -->
+	<div id="news">
+		<hr />
+		  <div>
+			<div id="announcement">
+			<ul>
+				<div id="reciveDataSpace"></div>
+			</ul>
+			</div>
+		 </div>
+		<hr />
+		  <div>
+		    message:
+		    <INPUT TYPE="text"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();" size="20" value="">
+		    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
+		  </div>
+	</div>
+
+	<!-- サブメニュー（左カラム） -->
+        <div id="login">
+		<div id="login_header"> LOGIN</div>
+		<div id="login_body">
+			<div id="loginState"><p></p></div>			
+				<INPUT TYPE="text"   id="loginName"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonLogin').click();" size="20" value="">
+				<INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
+				<INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
+		</div>
+	</div>
+
+	<div id="submenu">
+		<div id="submenu_header">GROUPS</div>
+		<ul id="submenu_body">
+			<li><a href="xxx.html">ALL</a></li>
+	 		<li><a href="xxx.html">GROUP1</a></li>
+			<li><a href="xxx.html">GROUP2</a></li>
+		</ul>
+	</div>
 </div>
-<div id="loginState"><p></p></div>
-  <div>
-    送信メッセージ:
-    <INPUT TYPE="text"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();" size="20" value="">
-    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
-  </div>
-  <div>
-    受信データ
-    <div id="reciveDataSpace"></div>
- </div>

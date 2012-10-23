@@ -23,6 +23,8 @@ module ChatModule
   # 接続ユーザー全員にメッセージを送る
   def logoutMessage?(msg)
     puts "in logoutMessage function #{msg}"
+    pos = msg.index(":")
+    msg[pos] = " "
     msg.include?(CMD_LOGOUT)
   end
 
