@@ -18,11 +18,13 @@ var ws;
 
 function reciveDataSpace(string) {
     var element = document.getElementById("reciveDataSpace");
-    var p = document.createElement("p");
-    p.appendChild(document.createTextNode(string));
-    element.appendChild(p);
+    //    var p = document.createElement("p");
+    //    p.appendChild(document.createTextNode(string));
+    //    element.appendChild(p);
+    element.value = element.value + "\n" + string;
     if (string == "socket closed")
 	init();
+    element.scrollTop = element.scrollHeight;
 }
 
 function loginState(string) {
@@ -32,6 +34,9 @@ function loginState(string) {
 
 function init() {
 
+    var element = document.getElementById("reciveDataSpace");
+    element.value = "";
+    
     var name = document.getElementById("loginName");
     name.focus();
     
@@ -47,7 +52,7 @@ function init() {
             loginState("The login name is already used. ");
 	}
 	else{
-            reciveDataSpace("Message: " + evt.data); 
+            reciveDataSpace(evt.data); 
 	}
     };
     
