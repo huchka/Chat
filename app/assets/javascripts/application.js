@@ -18,9 +18,6 @@ var ws;
 
 function reciveDataSpace(string) {
     var element = document.getElementById("reciveDataSpace");
-    //    var p = document.createElement("p");
-    //    p.appendChild(document.createTextNode(string));
-    //    element.appendChild(p);
     element.value = element.value + "\n" + string;
     if (string == "socket closed")
 	init();
@@ -35,7 +32,7 @@ function loginState(string) {
 function init() {
 
     var element = document.getElementById("reciveDataSpace");
-    element.value = "";
+    element.value = "";                                //textareaに行が入っている!!!!
     
     var name = document.getElementById("loginName");
     name.focus();
@@ -72,7 +69,7 @@ function sendMessage(){
     if(sendMsg.value == "") return;
     if(name.value == "") return;
     ws.send("[" + name.value + "]:" + sendMsg.value);
-    sendMsg.value = "";
+    sendMsg.value = "";                                //textareaに行が入っている!!!!
 }
 
 function sendLogin(){
@@ -114,4 +111,6 @@ function changeLogoutState(){
     login.disabled = false;
     var sendBtn = document.getElementById("buttonSend");
     sendBtn.disabled = true;
+    var msg = document.getElementById("message");
+    msg.focus();
 }

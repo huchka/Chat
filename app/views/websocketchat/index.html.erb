@@ -15,8 +15,7 @@
 		 </div>
 		<hr />
 		  <div>
-		    message:
-		    <INPUT TYPE="text"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();" size="20" value="">
+		    <textarea rows="2" cols="50"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();"></textarea>
 		    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
 		  </div>
 	</div>
