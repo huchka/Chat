@@ -18,7 +18,7 @@ var ws;
 
 function reciveDataSpace(string) {
     var element = document.getElementById("reciveDataSpace");
-    element.value = element.value + "\n" + string;
+    element.value = element.value + string + "\n";
     if (string == "socket closed")
 	init();
     element.scrollTop = element.scrollHeight;
@@ -32,7 +32,7 @@ function loginState(string) {
 function init() {
 
     var element = document.getElementById("reciveDataSpace");
-    element.value = "";                                //textareaに行が入っている!!!!
+    element.value = "";
     
     var name = document.getElementById("loginName");
     name.focus();
@@ -69,7 +69,7 @@ function sendMessage(){
     if(sendMsg.value == "") return;
     if(name.value == "") return;
     ws.send("[" + name.value + "]:" + sendMsg.value);
-    sendMsg.value = "";                                //textareaに行が入っている!!!!
+    sendMsg.value = "";
 }
 
 function sendLogin(){
