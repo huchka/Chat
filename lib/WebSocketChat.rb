@@ -4,6 +4,7 @@ require 'rubygems'
 require 'em-websocket'
 
 # チャット用モジュール ユーザー管理を追加
+#test
 module ChatModule
   # ログイン要求コマンド
   CMD_LOGIN = "[CreateLoginUserCmd]"
