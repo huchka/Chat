@@ -1,2 +1,42 @@
-<h1>Websocketchat#index</h1>
-<p>Find me in app/views/websocketchat/index.html.erb</p>
+<div id="pagebody">
+
+	<div id="header"><h1>Chat using websocket on Ruby on Rails</h1></div>
+
+	<!--（中央） -->
+	<div id="news">
+		<hr />
+		  <div>
+			<div id="announcement">
+			<ul>
+				<textarea rows="24" cols="80"  readonly="true" id="reciveDataSpace">
+				</textarea>
+			</ul>
+			</div>
+		 </div>
+		<hr />
+		  <div>
+		    <textarea rows="2" cols="50"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();"></textarea>
+		    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
+		  </div>
+	</div>
+
+	<!-- サブメニュー（左カラム） -->
+        <div id="login">
+		<div id="login_header"> LOGIN</div>
+		<div id="login_body">
+			<div id="loginState"><p></p></div>			
+				<INPUT TYPE="text"   id="loginName"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonLogin').click();" size="20" value="">
+				<INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
+				<INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
+		</div>
+	</div>
+
+	<div id="submenu">
+		<div id="submenu_header">GROUPS</div>
+		<ul id="submenu_body">
+			<li><a href="xxx.html">ALL</a></li>
+	 		<li><a href="xxx.html">GROUP1</a></li>
+			<li><a href="xxx.html">GROUP2</a></li>
+		</ul>
+	</div>
+</div>
