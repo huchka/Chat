@@ -1,6 +1,6 @@
 <div id="pagebody">
 
-	<div id="header"><h1>Chat using websocket on Ruby on Rails</h1></div>
+	<div id="header"><h1>Websocket Chat</h1></div>
 
 	<!--（中央） -->
 	<div id="news">
@@ -8,14 +8,14 @@
 		  <div>
 			<div id="announcement">
 			<ul>
-				<textarea rows="24" cols="80"  readonly="true" id="reciveDataSpace">
+				<textarea rows="20" cols="80"  readonly="true" id="reciveDataSpace">
 				</textarea>
 			</ul>
 			</div>
 		 </div>
 		<hr />
 		  <div>
-		    <textarea rows="2" cols="50"   id="message"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();"></textarea>
+			<INPUT TYPE="text"   id="message"  size="40" value="" onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();">
 		    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
 		  </div>
 	</div>
@@ -30,7 +30,7 @@
 				<INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
 		</div>
 	</div>
-
+<!--
 	<div id="submenu">
 		<div id="submenu_header">GROUPS</div>
 		<ul id="submenu_body">
@@ -39,4 +39,5 @@
 			<li><a href="xxx.html">GROUP2</a></li>
 		</ul>
 	</div>
+-->
 </div>
