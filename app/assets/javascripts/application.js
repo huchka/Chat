@@ -38,7 +38,7 @@ function init() {
     name.focus();
     
     Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-    ws = new Socket("ws://localhost:8080/");
+    ws = new Socket("ws://133.1.134.53:8080/");
     
     ws.onmessage = function(evt) {
 	if("[CreateLoginUserCmd_OK]" == evt.data){
