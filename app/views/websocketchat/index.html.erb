@@ -1,6 +1,6 @@
 <div id="pagebody">
 
-	<div id="header"><h1>Websocket Chat</h1></div>
+	<div id="header" align="center"><h1>Websocket Chat</h1></div>
 
 	<!--（中央） -->
 	<div id="news">
@@ -8,26 +8,42 @@
 		  <div>
 			<div id="announcement">
 			<ul>
-				<textarea rows="21" cols="80"  readonly="true" id="reciveDataSpace">
+				<textarea rows="25" cols="80"  readonly="true" id="reciveDataSpace">
 				</textarea>
 			</ul>
 			</div>
 		 </div>
 		<hr />
 		  <div>
-			<INPUT TYPE="text"   id="message"  size="40" value="" onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();">
+			&nbsp&nbsp&nbsp<INPUT TYPE="text"   id="message"  size="100" value="" onkeydown="if (event.keyCode == 13) document.getElementById('buttonSend').click();">
 		    <INPUT TYPE="button" id="buttonSend"  VALUE="送信" disabled="true" onClick="sendMessage()">
 		  </div>
 	</div>
 
 	<!-- サブメニュー（左カラム） -->
-        <div id="login">
+        <div id="login" align="center">
 		<div id="login_header"> LOGIN</div>
-		<div id="login_body">
-			<div id="loginState"><p></p></div>			
+		<div id="login_body" align="center">
+			<div id="loginState" align="center"><p></p></div>			
 				<INPUT TYPE="text"   id="loginName"  onkeydown="if (event.keyCode == 13) document.getElementById('buttonLogin').click();" size="20" value="">
+				<br/>
 				<INPUT TYPE="button" id="buttonLogin"  VALUE="ログイン" onClick="sendLogin()">
 				<INPUT TYPE="button" id="buttonLogout" VALUE="ログアウト" disabled="true" onClick="sendLogout()">
+		</div>
+		<br/>
+		<h3>This is a simple chat system using Ruby on Rails amd Websocket</h3>
+		<br/>
+		<h4>Everyone who is logged in is can send message, and everyone can read it</h4>
+		<div align="left">
+		Guide
+		<dl style="font-size:small;">
+		  <dt>Log in</dt>
+		  <dd>- Just enter your nickname and click "ログイン" button</dd>
+		  <dt>Messaging</dt>
+		  <dd>- Write a message on buttom field and click "送信" button or click enter</dd>
+		  <dt>Log out</dt>
+		  <dd>- Just click "ログアウト" button</dd>
+		</dl>
 		</div>
 	</div>
 <!--
