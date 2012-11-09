@@ -19,7 +19,7 @@ var ws;
 function reciveDataSpace(string) {
     var element = document.getElementById("reciveDataSpace");
     element.value = element.value + string + "\n";
-    if (string == "socket closed")
+    if (string == "Socket closed")
 	init();
     element.scrollTop = element.scrollHeight;
 }
@@ -42,7 +42,7 @@ function init() {
     
     ws.onmessage = function(evt) {
 	if("[CreateLoginUserCmd_OK]" == evt.data){
-            loginState("login");
+            loginState("You are logged in");
             changeloginState();
 	}
 	else if("[CreateLoginUserCmd_NG]" == evt.data){
@@ -55,11 +55,11 @@ function init() {
     
     ws.onclose = function() {
 	changeLogoutState();
-	reciveDataSpace("socket closed");
+	reciveDataSpace("Socket closed");
     };
     
     ws.onopen = function() {
-	reciveDataSpace("connected...");
+	reciveDataSpace("Connected...");
     }
 }
 
@@ -99,6 +99,7 @@ function changeloginState(){
     name.disabled = true;
     var sendBtn = document.getElementById("buttonSend");
     sendBtn.disabled = false;
+    loginState("You are logged in");
 }
 
 function changeLogoutState(){
@@ -112,5 +113,6 @@ function changeLogoutState(){
     var sendBtn = document.getElementById("buttonSend");
     sendBtn.disabled = true;
     var msg = document.getElementById("message");
+    loginState("Enter your name");
     msg.focus();
 }
